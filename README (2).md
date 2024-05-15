@@ -1,4 +1,4 @@
-# PrepHelp
+# BookStore
 
 This Bookstore project is built using the MERN stack (MongoDB, Express, React, Node.js). Users can sign up, log in, browse through a collection of books, and make purchases seamlessly. The application provides a user-friendly interface and secure authentication to ensure a smooth and reliable shopping experience.
 
