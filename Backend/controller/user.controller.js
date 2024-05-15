@@ -49,3 +49,24 @@ export const login = async(req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 };
+
+// In your controller file (user.controller.js)
+export const userProfile = async (req, res) => {
+    try {
+        // Fetch user details from the request object
+        const { user } = req;
+
+        // Return the user profile information
+        res.status(200).json({
+            message: "User profile retrieved successfully",
+            user: {
+                _id: user._id,
+                fullname: user.fullname,
+                email: user.email,
+            },
+        });
+    } catch (error) {
+        console.log("Error: " + error.message);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};

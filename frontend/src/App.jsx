@@ -7,6 +7,8 @@ import { Toaster } from "react-hot-toast";
 import { useAuth } from "./context/AuthProvider";
 import Cart from "./components/Cart";
 import { useCart } from "./context/CartProvider";
+import Profile from "./components/Profile";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
@@ -16,6 +18,7 @@ function App() {
   return (
     <>
       <div className="dark:bg-slate-900 dark:text-white">
+   
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -24,6 +27,7 @@ function App() {
           />
           <Route path="/cart" element={<Cart cartItems={cartItems}/>} />
           <Route path="/signup" element={<Signup />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
         <Toaster />
       </div>
