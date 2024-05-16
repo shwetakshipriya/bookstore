@@ -1,8 +1,12 @@
 import React from 'react';
-
+import Navbar
+ from './Navbar';
+ import Footer from './Footer';
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-400 flex flex-col items-center p-4">
+    <>
+    <Navbar />
+    <div className="min-h-screen bg-gray-900 text-gray-400 flex flex-col items-center p-10 mt-16">
       <div className="w-full max-w-3xl bg-gray-800 p-6 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold text-white mb-4">About Us</h1>
         <p className="mb-4">
@@ -25,5 +29,7 @@ export default function About() {
         </p>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

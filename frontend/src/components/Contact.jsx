@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Contact() {
   const [result, setResult] = useState("");
@@ -33,6 +35,8 @@ export default function Contact() {
   };
 
   return (
+  <>
+  <Navbar />
     <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <form onSubmit={onSubmit} className="bg-gray-800 p-6 rounded-lg shadow-md space-y-4">
@@ -74,5 +78,7 @@ export default function Contact() {
         )}
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
