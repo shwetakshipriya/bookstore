@@ -54,7 +54,7 @@ function Login() {
               type="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full px-3 py-2 border rounded-md outline-none"
+              className="w-full px-3 py-2 border rounded-md outline-none text-gray-700"
               {...register("email", { required: true })}
             />
             {errors.email && <span className="text-red-500">This field is required</span>}

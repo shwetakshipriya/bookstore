@@ -9,6 +9,8 @@ import Cart from "./components/Cart";
 import { useCart } from "./context/CartProvider";
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
+import About from "./components/About";
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
@@ -28,6 +30,8 @@ function App() {
           <Route path="/cart" element={<Cart cartItems={cartItems}/>} />
           <Route path="/signup" element={<Signup />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
         </Routes>
         <Toaster />
       </div>

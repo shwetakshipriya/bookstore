@@ -1,8 +1,13 @@
 import User from "../model/user.model.js";
 import bcryptjs from "bcryptjs";
+import { sendMail } from "../helpers/sendMail.js";
 export const signup = async(req, res) => {
     try {
         const { fullname, email, password } = req.body;
+          // Input validation
+          if (!fullname || !email || !password) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
         const user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({ message: "User already exists" });
@@ -14,6 +19,9 @@ export const signup = async(req, res) => {
             password: hashPassword,
         });
         await createdUser.save();
+        // Send welcome email to the user
+        sendMail(email,"Welcome to BookStore","Welcome to BookStore, your number one source for all kinds of books. We're dedicated to providing you the very best of books, with an emphasis on variety, affordability, and a user-friendly shopping experience.",`Hi ,${fullname}, Thank you for registering with us. We are excited to have you on board. We will keep you updated with the latest books and offers. Happy reading!`);
+
         res.status(201).json({
             message: "User created successfully",
             user: {

@@ -59,7 +59,7 @@ function Signup() {
                   type="text"
                   id="fullname"
                   placeholder="Enter your fullname"
-                  className="w-full px-3 py-1 border rounded-md outline-none"
+                  className="w-full px-3 py-1 border rounded-md outline-none text-gray-700"
                   {...register("fullname", { required: true })}
                 />
                 {errors.fullname && (
@@ -72,7 +72,7 @@ function Signup() {
                   type="email"
                   id="email"
                   placeholder="Enter your email"
-                  className="w-full px-3 py-1 border rounded-md outline-none"
+                  className="w-full px-3 py-1 border rounded-md outline-none text-gray-700"
                   {...register("email", { required: true })}
                 />
                 {errors.email && (
@@ -85,7 +85,7 @@ function Signup() {
                   type="password"
                   id="password"
                   placeholder="Enter your password"
-                  className="w-full px-3 py-1 border rounded-md outline-none"
+                  className="w-full px-3 py-1 border rounded-md outline-none text-gray-700"
                   {...register("password", { required: true })}
                 />
                 {errors.password && (
